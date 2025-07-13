@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Malla Interactiva Ingeniería Electrónica</title>
+<style>
+  body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: #f0f4f8;
+    margin: 0;
+    padding: 20px;
+  }
+  h1 {
+    text-align: center;
+    color: #004d99;
+  }
+  .container {
+    max-width: 900px;
+    margin: auto;
+  }
+  .year {
+    background: #007acc;
+    color: white;
+    padding: 10px 20px;
+    margin: 30px 0 10px;
+    border-radius: 8px;
+    font-size: 1.4rem;
+  }
+  .semester {
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    margin-bottom: 20px;
+    padding: 15px 20px;
+  }
+  .semester h3 {
+    margin-top: 0;
+    color: #004d99;
+  }
+  ul {
+    list-style: none;
+    padding-left: 0;
+  }
+  li {
+    background: #e6f0ff;
+    margin: 8px 0;
+    padding: 10px 15px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    border-left: 5px solid transparent;
+  }
+  li:hover {
+    background: #cce0ff;
+    border-left-color: #007acc;
+  }
+  /* Popup info box */
+  .info-box {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    max-width: 400px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    padding: 20px;
+    transform: translate(-50%, -50%);
+    z-index: 100;
+    display: none;
+  }
+  .info-box h4 {
+    margin-top: 0;
+    color: #007acc;
+  }
+  .info-close {
+    float: right;
+    cursor: pointer;
+    font-weight: bold;
+    color: #999;
+    font-size: 20px;
+  }
+  .info-close:hover {
+    color: #333;
+  }
+  /* Overlay */
+  .overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right:0;
+    bottom:0;
+    background: rgba(0,0,0,0.3);
+    display: none;
+    z-index: 50;
+  }
+</style>
+</head>
+<body>
+
+<div class="container">
+  <h1>Malla Interactiva Ingeniería Electrónica</h1>
+
+  <div class="year">Primer año (CBC)</div>
+  <div class="semester">
+    <h3>Materias</h3>
+    <ul>
+      <li data-info="Estudio del método científico y fundamentos de la investigación.">Pensamiento Científico</li>
+      <li data-info="Análisis de la sociedad, Estado y su impacto social.">Sociedad y Estado</li>
+      <li data-info="Introducción al pensamiento lógico para la programación y sistemas.">Pensamiento Computacional</li>
+      <li data-info="Fundamentos básicos de física clásica.">Física</li>
+      <li data-info="Introducción al cálculo diferencial e integral.">Análisis Matemático A</li>
+      <li data-info="Bases de álgebra y estructuras matemáticas.">Álgebra A</li>
+    </ul>
+  </div>
+
+  <div class="year">Segundo año</div>
+  <div class="semester">
+    <h3>3er Cuatrimestre</h3>
+    <ul>
+      <li data-info="Avance en cálculo integral y series.">Análisis Matemático II</li>
+      <li data-info="Estudio avanzado de física aplicada a partículas.">Física de Sistemas de Partículas</li>
+      <li data-info="Introducción a conceptos básicos de ingeniería electrónica.">Introducción a la Ingeniería Electrónica</li>
+      <li data-info="Fundamentos de algoritmos y programación.">Algoritmos y Programación</li>
+    </ul>
+  </div>
+  <div class="semester">
+    <h3>4to Cuatrimestre</h3>
+    <ul>
+      <li data-info="Álgebra lineal aplicada a ingeniería.">Álgebra Lineal</li>
+      <li data-info="Electricidad, magnetismo y transferencia de calor.">Electricidad, Magnetismo y Calor</li>
+      <li data-info="Introducción a dispositivos electrónicos básicos.">Introducción a los Dispositivos Electrónicos</li>
+      <li data-info="Fundamentos de sistemas digitales y lógica.">Sistemas Digitales</li>
+    </ul>
+  </div>
+
+  <div class="year">Tercer año</div>
+  <div class="semester">
+    <h3>5to Cuatrimestre</h3>
+    <ul>
+      <li data-info="Probabilidad aplicada a la ingeniería y estadística.">Probabilidad y Estadística</li>
+      <li data-info="Análisis de señales y sistemas lineales.">Señales y Sistemas</li>
+      <li data-info="Análisis de circuitos eléctricos y electrónicos.">Análisis de Circuitos</li>
+      <li data-info="Redes y sistemas de comunicaciones.">Redes de Comunicaciones</li>
+    </ul>
+  </div>
+  <div class="semester">
+    <h3>6to Cuatrimestre</h3>
+    <ul>
+      <li data-info="Planificación y gestión de proyectos de ingeniería.">Planificación de Proyectos</li>
+      <li data-info="Diseño y análisis de circuitos microelectrónicos.">Circuitos Microelectrónicos</li>
+      <li data-info="Procesos estocásticos en sistemas de ingeniería.">Procesos Estocásticos</li>
+      <li data-info="Control automático de sistemas dinámicos.">Control Automático</li>
+      <li data-info="Desarrollo práctico en sistemas embebidos.">Taller de Sistemas Embebidos</li>
+    </ul>
+  </div>
+
+  <div class="year">Cuarto año</div>
+  <div class="semester">
+    <h3>7mo Cuatrimestre</h3>
+    <ul>
+      <li data-info="Química y electroquímica aplicada a la ingeniería.">Química y Electroquímica</li>
+      <li data-info="Electromagnetismo aplicado a la electrónica.">Electromagnetismo Aplicado</li>
+      <li data-info="Taller práctico de automatización y control.">Taller de Automatización y Control</li>
+      <li data-info="Procesamiento de señales avanzado.">Taller de Procesamiento de Señales</li>
+    </ul>
+  </div>
+  <div class="semester">
+    <h3>8vo Cuatrimestre</h3>
+    <ul>
+      <li data-info="Dispositivos semiconductores y sus aplicaciones.">Dispositivos Semiconductores</li>
+      <li data-info="Taller práctico de comunicaciones digitales.">Taller de Comunicaciones Digitales</li>
+      <li data-info="Diseño de circuitos electrónicos.">Taller de Diseño de Circuitos Electrónicos</li>
+      <li data-info="Normas de higiene y seguridad en ingeniería.">Higiene y Seguridad</li>
+      <li data-info="Electivas y optativas para especialización.">Electivas / Optativas</li>
+    </ul>
+  </div>
+
+  <div class="year">Quinto año</div>
+  <div class="semester">
+    <h3>9no Cuatrimestre</h3>
+    <ul>
+      <li data-info="Aspectos legales y ética profesional.">Legislación y Ejercicio Profesional</li>
+      <li data-info="Gestión integral de proyectos electrónicos.">Gestión de Proyectos Electrónicos</li>
+      <li data-info="Trabajo integrador final de la carrera.">Trabajo Integrador Final</li>
+      <li data-info="Electivas y optativas para especialización.">Electivas / Optativas</li>
+    </ul>
+  </div>
+  <div class="semester">
+    <h3>10mo Cuatrimestre</h3>
+    <ul>
+      <li data-info="Impacto social, ambiental y desarrollo sustentable.">Impacto Social, Ambiental y Desarrollo Sustentable</li>
+      <li data-info="Trabajo integrador final de la carrera.">Trabajo Integrador Final</li>
+      <li data-info="Electivas y optativas para especialización.">Electivas / Optativas</li>
+    </ul>
+  </div>
+</div>
+
+<!-- Popup Info Box -->
+<div class="overlay"></div>
+<div class="info-box" id="infoBox">
+  <span class="info-close" id="infoClose">&times;</span>
+  <h4 id="infoTitle"></h4>
+  <p id="infoDesc"></p>
+</div>
+
+<script>
+  const infoBox = document.getElementById('infoBox');
+  const infoTitle = document.getElementById('infoTitle');
+  const infoDesc = document.getElementById('infoDesc');
+  const infoClose = document.getElementById('infoClose');
+  const overlay = document.querySelector('.overlay');
+
+  document.querySelectorAll('li[data-info]').forEach(item => {
+    item.addEventListener('click', () => {
+      infoTitle.textContent = item.textContent;
+      infoDesc.textContent = item.getAttribute('data-info');
+      infoBox.style.display = 'block';
+      overlay.style.display = 'block';
+    });
+  });
+
+  infoClose.addEventListener('click', () => {
+    infoBox.style.display = 'none';
+    overlay.style.display = 'none';
+  });
+
+  overlay.addEventListener('click', () => {
+    infoBox.style.display = 'none';
+    overlay.style.display = 'none';
+  });
+</script>
+
+</body>
+</html>
